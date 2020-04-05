@@ -1,0 +1,33 @@
+To reproduce the results of our experiment:
+
+1. On Amazon.s EC2, launch an instance of cs244-mininet (ami-cb8851a2), of
+   type c1.medium.
+
+2. Copy the necessary Python scripts to a directory within your home
+   directory on the instance.
+
+3. Open a shell and go to the directory containing the Python scripts copied
+   in step 2.
+
+4. Execute the following commands:
+
+   $ sudo chown ubuntu ~/.matplotlib
+   $ chmod 777 *.py
+
+   The first command is necessary because .matplotlib is initially owned by
+   root.  The second makes the Python scripts executable.
+
+5. To run the experiment, execute the following command:
+
+   $ sudo ./reproduceResults.py
+
+   On the first execution, it will fail after a few seconds.  Execute the
+   command again and it should run to completion.  The experiment may take a
+   couple hours to complete.
+
+6. As the script runs, it will output the goodput values it records
+   periodically. When the script completes, three image files named
+   figure1.png, figure2.png and figure3.png will be in the current directory.
+   These correspond to Figures 1b, Figures 2b, and Figures 3 in this report.
+
+
